@@ -7,6 +7,8 @@ markdown_extensions:
 
 site_dir: docs
 docs_dir: source
+repo_name: PrydeVR
+repo_url: https://www.prydevr.com
 
 site_name: PrydeVR Documentation
 site_author: Chen Chen
@@ -22,6 +24,3 @@ pages:
 - Feature Walkthrough:
     - Spectator Camera: modules/spectator-camera/camera-presets.md
     - Input Control: modules/input-control/input-control.md
-
-plugins:
-    - search

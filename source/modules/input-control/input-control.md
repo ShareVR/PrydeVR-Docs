@@ -23,7 +23,7 @@ Below is a list of all of available voice commands. Note that we have multiple a
 | - | *redording start* |
 | Stop Recording | *stop* |
 | - | *stop recording* |
-| - | *ternimate recording* |
+| - | *terminate recording* |
 | - | *finish recording* |
 | - | *end recording* |
 | - | *recording stop* |
