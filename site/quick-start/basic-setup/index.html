@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Chen Chen">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Basic Setup - PrydeVR Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Basic Setup";
+    var mkdocs_page_input_path = "quick-start\\basic-setup.md";
+    var mkdocs_page_url = "/quick-start/basic-setup/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> PrydeVR Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">PrydeVR Unity Plugin Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Getting Started</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../introduction/">Introduction</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Basic Setup</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#import-prydevr-and-load-the-example-scene">Import PrydeVR and Load the Example Scene</a></li>
+    
+
+    <li class="toctree-l3"><a href="#apply-prydevr-to-your-own-game">Apply PrydeVR to Your Own Game</a></li>
+    
+
+    <li class="toctree-l3"><a href="#customize-your-own-camera-rig">Customize Your Own Camera Rig</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Feature Walkthrough</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../modules/spectator-camera/camera-presets/">Spectator Camera</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../modules/input-control/input-control/">Input Control</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">PrydeVR Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Getting Started &raquo;</li>
+        
+      
+    
+    <li>Basic Setup</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="import-prydevr-and-load-the-example-scene">Import PrydeVR and Load the Example Scene<a class="headerlink" href="#import-prydevr-and-load-the-example-scene" title="Permanent link"></a></h2>
+<p>Make sure you have <a href="https://www.assetstore.unity3d.com/en/#!/content/32647">SteamVR</a> plugin in your project (Required only for the example scene)</p>
+<p>Import the PrydeVR Unity Plugin (currently distributed as a separate UnityPackage)</p>
+<p>Under <em>Assets/PrydeVR/Scenes/</em>, open the example scene</p>
+<p>Hit play to start the demo</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should be able to see a big panel in front of you called <em>PrydeVR Live View Panel</em>. The panel will stream PrydeVR's camera view so you can clearly see what's going on</p>
+<p>We've configured PrydeVR camera using the <em>Orbit Smooth</em> mode. You should be able to see a small camera preview panel floating in the air that is orbiting around you. If you find it, say hi to our VR camera rig! We embedded the preview panel so it's easy for players to find the camera and be able to see what the camera sees. You can easily turn it off in the PrydeVR control panel if you don't need it.</p>
+<p>By default, the recording can be started and stopped by pressing the X key in your keyboard. We provided other mapping options including some that use the Vive Controllers. You can change them in the PrydeVR gameobject. We also have an easy to use voice command system setup if you would like to use your own voice to control the recording.</p>
+</div>
+<p><strong>Press X key to start record</strong>. Alternatively, you can use our built-in voice command system (requires Internet connection). Simply say out loud <em>"start recording"</em> to start. Once you started recording, you should see the camera preview panel start to blink red indicating the capturing has already started.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Feel free to move around and teleport. The PrydeVR camera will smoothly follows you as you move.</p>
+</div>
+<p><strong>Press X again to stop recording</strong>. If you prefer using voice command, just say out loud <em>"stop recording"</em> to stop. By default, video file will be created in the "PrydeVR" folder under current Windows user's Documents folder. However, you can easily customize the output folder in the PrydeVR control panel. The path to the file will also output to the console window.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can record as many times as you want and each session will create a separate video file.</p>
+</div>
+<p><center>
+     <img src="../../Imgs/v0.3_FilePath1.png" alt="Saved file path">
+   </center></p>
+<hr />
+<h2 id="apply-prydevr-to-your-own-game">Apply PrydeVR to Your Own Game<a class="headerlink" href="#apply-prydevr-to-your-own-game" title="Permanent link"></a></h2>
+<ol>
+<li>Open SteamVR interaction system example scene located at: Assets/SteamVR/InteractionSystem/Samples/Scenes/Interactions_Example</li>
+<li>Drag the PrydeVR prefab under <em>Assets/PrydeVR/Prefabs/</em> to anywhere in your scene hierarchy</li>
+<li>All done. No kidding! Now hit play and you should be able to record and share!</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pretty easy-to-use, right? Now that you are all set with the setup, keep in mind that we also support you with many options to fully customize PrydeVR the way you like.</p>
+</div>
+<p>Select the PrydeVR gameobject that you just imported in your scene hierarchy and you should see the PrydeVR control panel. Let's go through every single one of them in the next section.</p>
+<p><center>
+    <img src="../../Imgs/InspectorUI.png" alt="Saved file path" width="300" align="center">
+</center></p>
+<hr />
+<h2 id="customize-your-own-camera-rig">Customize Your Own Camera Rig<a class="headerlink" href="#customize-your-own-camera-rig" title="Permanent link"></a></h2>
+<p>PrydeVR now supports customizing your own camera rig since SDK v0.5.0. This allows you to fully customimze the recording camera the way you want. Below is an example taking use of the custom camera feature to make a hand-held camera rig in under 60 seconds.</p>
+<p>First, make sure PrydeVR SDK is already imported to you Unity project.</p>
+<p>Under <em>Assets/PrydeVR/Scenes/</em>, open the example scene</p>
+<p>Click PrydeVR gameobject again, find <em>Camera Follow Regime</em> and select <em>Custom Camera</em>. Then leave <em>Camera Local Position</em> to (0, 0, 0) and update <em>Camera Local Rotation</em> to (<strong>30</strong>, 0, 0).</p>
+<p>Enable <em>Show Camera Preview</em> and then update <em>Camera Preview Position</em> to (0, 0, <strong>0.4</strong>) and <em>Camera Preview Rotation</em> to (<strong>60</strong>, <strong>180</strong>, 0). Leave <em>Camera Preview Scale</em> to its default 1.</p>
+<p>Now drag the <em>Hand1</em> gameobject under <em>Player/SteamVRObjects/</em> to <em>Target Camera</em> to make the reference. Now you are all set! Your setting should looks like the example below.
+  <center>
+    <img src="../../Imgs/CustomCamera_InspectorField.png" alt="Saved file path" width="400" align="center">
+  </center></p>
+<p>Go ahead hit play. Now you should be able to see a camera preview panel is attached to one of your "<em>hand</em>" and it has already becomes a camera rig.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../modules/spectator-camera/camera-presets/" class="btn btn-neutral float-right" title="Spectator Camera">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../introduction/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Pryde (ShareVR LLC)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../introduction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../modules/spectator-camera/camera-presets/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

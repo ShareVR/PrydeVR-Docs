@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Chen Chen">
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Input Control - PrydeVR Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Input Control";
+    var mkdocs_page_input_path = "modules\\input-control\\input-control.md";
+    var mkdocs_page_url = "/modules/input-control/input-control/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> PrydeVR Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">PrydeVR Unity Plugin Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Getting Started</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../quick-start/introduction/">Introduction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../quick-start/basic-setup/">Basic Setup</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Feature Walkthrough</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../spectator-camera/camera-presets/">Spectator Camera</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Input Control</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#speech-interface">Speech Interface</a></li>
+        
+            <li><a class="toctree-l4" href="#keyboard-and-controller-trigger">Keyboard and Controller Trigger</a></li>
+        
+            <li><a class="toctree-l4" href="#api-interface">API Interface</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">PrydeVR Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Feature Walkthrough &raquo;</li>
+        
+      
+    
+    <li>Input Control</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h1>
+<p>With a goal of providing the most intuitive interaction experience, we have implemented multiple ways of engaging with Pryde's functionality.</p>
+<hr />
+<h2 id="speech-interface">Speech Interface<a class="headerlink" href="#speech-interface" title="Permanent link"></a></h2>
+<p>You are in the middle of a game session, shooting your enermies while trying to cover your teammates, such a wonderful moment for you to capture with Pryde so you can easily show it off to your friends, you looked at your hand and realized that all of your keys has been mapped already, leaving you no easy way to tell the Pryde camera to start recording. Wait, how about just TALK TO THE CAMERA? That will easily solve the problem, right?</p>
+<p>The litle scenario above is one of the main reason why we introduced the speech interface. With the Pryde speech interface, you can simply talk to Pryde to control functions like start/stop recording, show/hide camera preview panel, <em>etc.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do you feel like an idiot when trying to talk to the computer/device multiple times and then absolutely nothing happens? Well we feel the same. That's why we have put extra amount of work to ensure that this just works like a charm. In order to provide butter smooth experience of voice interaction with both low latency and great accuracy, we are using native Windows speech API which is part of the Windows 10 OS. Aside from latency and accuracy, this also have the benefit of not requiring Internet connection at all so don't worry about privacy or bandwitdh. However, using such API does have one requirement, you do need to be using Windows 10 OS. So if you are testing this using MacOS or Linux, please turn speech interface off.</p>
+</div>
+<h3 id="available-commands-list">Available Commands List<a class="headerlink" href="#available-commands-list" title="Permanent link"></a></h3>
+<p>Below is a list of all of available voice commands. Note that we have multiple alternatives for each command action so you can pick one that works for you the best, <em>i.e.</em> has the lowest error rate. <strong>-</strong> means the same command as above.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Command Action</th>
+<th align="center">Voice Command (Say it out loud)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Start Recording</td>
+<td align="center"><em>start</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>start recording</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>begin recording</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>redording start</em></td>
+</tr>
+<tr>
+<td align="center">Stop Recording</td>
+<td align="center"><em>stop</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>stop recording</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>ternimate recording</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>finish recording</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>end recording</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>recording stop</em></td>
+</tr>
+<tr>
+<td align="center">Show Camera Model</td>
+<td align="center"><em>show camera</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>enable camera</em></td>
+</tr>
+<tr>
+<td align="center">Hide Camera Model</td>
+<td align="center"><em>hide camera</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>disable camera</em></td>
+</tr>
+<tr>
+<td align="center">Switch Camera to Smooth Follow Mode</td>
+<td align="center"><em>camera follow</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>follow me</em></td>
+</tr>
+<tr>
+<td align="center">Switch Camera to Orbit Mode</td>
+<td align="center"><em>camera orbit</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>orbit me</em></td>
+</tr>
+<tr>
+<td align="center">Show Avatar</td>
+<td align="center"><em>show avatar</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>enable avatar</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>avatar on</em></td>
+</tr>
+<tr>
+<td align="center">Hide Avatar</td>
+<td align="center"><em>hide avatar</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>disable avatar</em></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"><em>avatar off</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="keyboard-and-controller-trigger">Keyboard and Controller Trigger<a class="headerlink" href="#keyboard-and-controller-trigger" title="Permanent link"></a></h2>
+<p>If you do have an extra key on the controller or keyboard, we have reserved the key trigger functionality so you can assign one or a combination of two keys to trigger recording start/stop.</p>
+<hr />
+<h2 id="api-interface">API Interface<a class="headerlink" href="#api-interface" title="Permanent link"></a></h2>
+<p>Future managed external Unity API interface has been planned and we will have a beta version shipped to be tested soon. Stay tuned!</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../spectator-camera/camera-presets/" class="btn btn-neutral" title="Spectator Camera"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Pryde (ShareVR LLC)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../spectator-camera/camera-presets/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+
+</body>
+</html>
