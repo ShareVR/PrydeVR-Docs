@@ -1,0 +1,24 @@
+theme: readthedocs
+markdown_extensions:
+    - toc:
+        permalink: 
+    - admonition
+    - def_list
+
+site_name: PrydeVR Documentation
+site_author: Chen Chen
+site_url: https://www.prydevr.com
+site_description: Present yourself, present VR with Pryde
+copyright: Copyright &copy; 2017 Pryde (ShareVR LLC)
+
+pages:
+- PrydeVR Unity Plugin Overview: index.md
+- Getting Started:
+    - Introduction: quick-start/introduction.md
+    - Basic Setup: quick-start/basic-setup.md
+- Feature Walkthrough:
+    - Spectator Camera: modules/spectator-camera/camera-presets.md
+    - Input Control: modules/input-control/input-control.md
+
+plugins:
+    - search

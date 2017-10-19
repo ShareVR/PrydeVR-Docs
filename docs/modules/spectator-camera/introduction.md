@@ -1,0 +1,1 @@
+The spectator camera is the core feature of Pryde. With our spectator camera control, you are able to fully customize the recording camera without even touching any code. Besides, in the case if you do want to programatically script camera motion the way you want, we also have dedicated custom camera mode for it.
