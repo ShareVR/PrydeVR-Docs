@@ -5,6 +5,9 @@ markdown_extensions:
     - admonition
     - def_list
 
+site_dir: docs
+docs_dir: source
+
 site_name: PrydeVR Documentation
 site_author: Chen Chen
 site_url: https://www.prydevr.com
